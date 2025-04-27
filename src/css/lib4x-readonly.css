@@ -1,0 +1,53 @@
+.u-Form-fieldContainer.lib4x-disabled, .t-Form-fieldContainer.lib4x-disabled,
+.a-MDEditor-toolbar.lib4x-disabled {
+    cursor: var(--a-button-disabled-cursor, default);
+    pointer-events: none;
+}
+  
+.apex-item-text.lib4x-readonly, 
+.apex-item-textarea.lib4x-readonly,
+.apex-item-select.lib4x-readonly,
+.apex-item-comboselect.lib4x-readonly,
+.apex-item-group--popup-lov.lib4x-readonly .apex-item-multi,
+.listmanager.lib4x-readonly,
+.a-MDEditor-toolbar.lib4x-disabled,
+.a-MDEditor-previewPanel.lib4x-readonly,
+.ck-editor.lib4x-readonly .ck-sticky-panel__content,
+.ck-editor .ck-read-only,
+input.lib4x-readonly,
+.a-Button--popupLOV.lib4x-readonly,
+a-date-picker.lib4x-readonly input.apex-item-datepicker,
+a-date-picker.lib4x-readonly button.a-Button--calendar,
+a-autocomplete.lib4x-readonly input.apex-item-auto-complete,
+a-color-picker.lib4x-readonly input.apex-item-color-picker,
+a-color-picker.lib4x-readonly button.a-Button--colorPicker,
+button.lib4x-readonly {
+    border-style: dashed !important;
+    background-color: var(--ut-region-background-color, var(--ut-component-background-color)) !important;
+}
+
+.apex-item-single-checkbox.lib4x-readonly label.u-checkbox,
+.apex-item-checkbox.lib4x-readonly label.u-checkbox,
+.apex-item-radio.lib4x-readonly label.u-radio,
+.a-Switch.lib4x-readonly .a-Switch-toggle {
+    opacity: 0.6;
+    cursor: var(--a-checkbox-disabled-cursor, default);
+    pointer-events: auto;
+}
+
+/* prevent onInteraction on grid checkbox */
+.a-GV--editMode .a-GV-cell.lib4x-readonly .apex-item-single-checkbox{
+    pointer-events: none;
+}
+
+.lib4x-visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+}
