@@ -28,7 +28,7 @@
           "internalName" : "LIB4X.AXT.SET_READONLY",
           "type" : "dynamic action",
 	  "demo" : "https://apex.oracle.com/pls/apex/r/yola/demo/dynamic-read-only",
-	  "previewImage" : "https://github.com/kekema/apex-condition-builder/blob/main/applicability-rule.jpg?raw=true"
+	  "previewImage" : "https://github.com/kekema/apex-dynamic-readonly/blob/main/read-only-page-items.jpg?raw=true"
         }
       }
     }
