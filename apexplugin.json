@@ -1,7 +1,7 @@
 {
-    "name" : "Set/Unset Item Read-Only",
+    "name" : "Set Item Read-Only",
     "version" : "1.0.0",
-    "description" : "Dynamically Set/Unset the Read-Only mode for an Item (client-side). Supports both IG Column Items as well as regular Page Items. #lib4x",
+    "description" : "Dynamically Set or Unset the Read-Only mode for an Item (client-side). Supports both IG Column Items as well as regular Page Items. #lib4x",
     "keywords" : ["Read-Only", "readonly"],
     "homepage" : "https://github.com/kekema/apex-dynamic-readonly",
     "bugs" : {
