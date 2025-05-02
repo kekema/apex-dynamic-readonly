@@ -6,3 +6,7 @@ Dynamic Action plugin to set/unset an item Read-Only. Both IG column items as we
 ![image](https://github.com/kekema/apex-dynamic-readonly/blob/main/read-only-items-ig-srv.jpg)
 
 For a further overview, see [this blog item](https://karelekema.hashnode.dev/oracle-apex-set-item-read-only-plugin).
+
+For installation, notice there are 2 plugins to be installed for respectively set and unset action.
+
+Compatibility is with APEX 24.2
