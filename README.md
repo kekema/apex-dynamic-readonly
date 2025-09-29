@@ -28,7 +28,7 @@ For the true/false actions, check 'Fire on Initialization'
 <img width="20%" height="20%" alt="Image" src="https://github.com/user-attachments/assets/27c464d4-fc8e-4d53-b199-c3f1e030ffba" />
 </p>
 
-Limitation: the plugin won't work well with Checkboxes in IG.
+Limitation: the plugin can not be used with with Checkboxes in IG.
 
 For installation, notice there are 2 plugins to be installed for respectively set and unset action.
 
