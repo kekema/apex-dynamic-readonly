@@ -1,6 +1,6 @@
 {
     "name" : "Set Item Read-Only",
-    "version" : "1.0.0",
+    "version" : "1.0.1",
     "description" : "Dynamically Set or Unset the Read-Only mode for an Item (client-side). Supports both IG Column Items as well as regular Page Items. #lib4x",
     "keywords" : ["Read-Only", "readonly"],
     "homepage" : "https://github.com/kekema/apex-dynamic-readonly",
@@ -27,8 +27,8 @@
         "plugin" : {
           "internalName" : "LIB4X.AXT.SET_READONLY",
           "type" : "dynamic action",
-	  "demo" : "https://apex.oracle.com/pls/apex/r/yola/demo/dynamic-read-only",
-	  "previewImage" : "https://github.com/kekema/apex-dynamic-readonly/blob/main/read-only-page-items.jpg?raw=true"
+          "demo" : "https://apex.oracle.com/pls/apex/r/yola/demo/dynamic-read-only",
+          "previewImage" : "https://github.com/kekema/apex-dynamic-readonly/blob/main/read-only-page-items.jpg?raw=true"
         }
       }
     }
