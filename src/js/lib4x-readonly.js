@@ -73,7 +73,7 @@ lib4x.axt.readonly = (function($)
         // subscribe to dialog/popup open event as to suppress the dialog/popup when the related item is readonly
         let topApex = apex.util.getTopApex();
         let ta$ = topApex.jQuery;
-        ta$(topApex.gPageContext$).on('popupopen dialogopen', function(jQueryEvent, data) { 
+        ta$(topApex.gPageContext$).off('popupopen.lib4x_ro dialogopen.lib4x_ro').on('popupopen.lib4x_ro dialogopen.lib4x_ro', function(jQueryEvent, data) { 
             let dialog$ = ta$(jQueryEvent.target).closest(DIALOG_SELECTOR);
             if (dialog$.length)
             {
