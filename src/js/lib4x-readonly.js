@@ -54,18 +54,18 @@ lib4x.axt.readonly = (function($)
     // ==page module
     let pageModule = (function()
     {      
+        let currentPageNr = $('#pFlowStepId').val();
         // get the APEX item element which opens the dialog/popup
         function getDialogParentElement(dialog$)
         {
             let opener = {};
-            let currentPageNr = $('#pFlowStepId').val();
             // dialog id examples: PopupLov_69_P69_POPUP_LOV_dlg, example: CS_69_P69_AUTOCOMPLETE, P69_COLOR_PICKER_ColorPickerDlg, P69_DATE_dialog
             let match = dialog$.id.match(/^(?:(?:PopupLov|CS)_(\d+)_(.+?)(?:_dlg)?|([a-zA-Z0-9_$]+(?:_[a-zA-Z0-9_$]+)*)_(?:ColorPickerDlg|dialog))$/);
             if (match)
             {
                 opener.itemId = match[2] || match[3];
                 // if pageNr is not in the dialog id, check if the item is on the current page
-                opener.pageNr = match[1] || apex.item(opener.itemId).element.length ? currentPageNr : null;
+                opener.pageNr = match[1] || (apex.item(opener.itemId).element.length ? currentPageNr : null);
             }
             return opener.pageNr == currentPageNr ? apex.item(opener.itemId).element : $();
         }     
@@ -73,7 +73,8 @@ lib4x.axt.readonly = (function($)
         // subscribe to dialog/popup open event as to suppress the dialog/popup when the related item is readonly
         let topApex = apex.util.getTopApex();
         let ta$ = topApex.jQuery;
-        ta$(topApex.gPageContext$).off('popupopen.lib4x_ro dialogopen.lib4x_ro').on('popupopen.lib4x_ro dialogopen.lib4x_ro', function(jQueryEvent, data) { 
+        ta$(topApex.gPageContext$).off('popupopen.lib4x_ro' + currentPageNr + ' dialogopen.lib4x_ro' + currentPageNr)
+                                  .on('popupopen.lib4x_ro' + currentPageNr + ' dialogopen.lib4x_ro' + currentPageNr, function(jQueryEvent, data) {                                 
             let dialog$ = ta$(jQueryEvent.target).closest(DIALOG_SELECTOR);
             if (dialog$.length)
             {
@@ -86,7 +87,14 @@ lib4x.axt.readonly = (function($)
                     parentElement$.focus();
                 }
             }
-        });         
+        });
+        
+        window.addEventListener('pagehide', function (event) {
+            if (!event.persisted) 
+            {
+                ta$(topApex.gPageContext$).off('popupopen.lib4x_ro' + currentPageNr + ' dialogopen.lib4x_ro' + currentPageNr);
+            }
+        });
     })();  
 
     // ==IG module
